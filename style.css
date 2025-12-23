@@ -1,11 +1,6 @@
-this is my current css /* ==========================
-   FONT IMPORTS
-=========================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
 
-/* ==========================
-   ROOT VARIABLES
-=========================== */
 :root {
     --bg: #050806;
     --primary: #52ff9b;
@@ -13,9 +8,7 @@ this is my current css /* ==========================
     --border: rgba(255, 255, 255, 0.1);
 }
 
-/* ==========================
-   GLOBAL RESET
-=========================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -29,9 +22,7 @@ body {
     overflow: hidden; /* Prevent body scroll for modern app feel */
 }
 
-/* ==========================
-   BACKGROUND VISUALS
-=========================== */
+
 #canvas-container {
     position: fixed;
     top: 0;
@@ -68,9 +59,6 @@ body {
     to { transform: scale(1.2); }
 }
 
-/* ==========================
-   NAVIGATION
-=========================== */
 nav {
     display: flex;
     justify-content: space-between;
@@ -113,9 +101,7 @@ nav {
     padding-bottom: 4px;
 }
 
-/* ==========================
-   PAGE TRANSITIONS
-=========================== */
+
 .page {
     position: absolute;
     width: 100%;
@@ -133,9 +119,7 @@ nav {
     transform: translateY(0) scale(1);
 }
 
-/* ==========================
-   HERO STYLING
-=========================== */
+
 .badge {
     font-size: 10px;
     color: var(--primary);
@@ -165,9 +149,7 @@ h1 {
     max-width: 500px;
 }
 
-/* ==========================
-   COMPONENTS
-=========================== */
+
 .glass-container {
     background: var(--glass);
     border: 1px solid var(--border);
