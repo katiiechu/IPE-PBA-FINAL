@@ -19,26 +19,37 @@ body {
     color: white;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    overflow-x: hidden; /* allow vertical scroll */
+    overflow-x: hidden;
     position: relative;
     z-index: 0;
 }
 
+/* MAIN CONTAINER */
+main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
 /* PAGE SECTIONS */
 .page {
-    position: relative;  /* relative instead of absolute */
+    position: absolute; /* Pages now sit on top of each other */
+    top: 0;
+    left: 0;
     width: 100%;
     min-height: 100vh;
     padding: 150px 10% 50px;
     opacity: 0;
+    visibility: hidden; /* Prevents hidden pages from blocking clicks */
     transform: translateY(20px) scale(0.98);
     pointer-events: none;
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1; /* above particle canvas */
+    z-index: 1;
 }
 
 .page.active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0) scale(1);
     pointer-events: auto;
 }
@@ -49,7 +60,7 @@ body {
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.3;
-    z-index: -1; /* behind content, above canvas */
+    z-index: -1;
     animation: pulse 10s infinite alternate;
 }
 
@@ -105,7 +116,7 @@ nav {
     padding-bottom: 4px;
 }
 
-/* BADGE */
+/* HEADINGS & CONTENT */
 .badge {
     font-size: 10px;
     color: var(--primary);
@@ -116,7 +127,6 @@ nav {
     margin-bottom: 20px;
 }
 
-/* HEADINGS */
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 5rem;
@@ -136,17 +146,16 @@ h1 {
     max-width: 500px;
 }
 
-/* GLASS CONTAINER */
 .glass-container {
     background: var(--glass);
     border: 1px solid var(--border);
     backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px); /* Safari support */
+    -webkit-backdrop-filter: blur(30px);
     padding: 60px;
     border-radius: 4px;
 }
 
-/* GRID FOR INTERVIEWS */
+/* INTERVIEWS GRID */
 .trilogy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -159,6 +168,8 @@ h1 {
     padding: 40px;
     border: 1px solid var(--border);
     transition: 0.4s;
+    display: flex;
+    flex-direction: column;
 }
 
 .episode-card:hover {
@@ -174,16 +185,20 @@ audio {
     opacity: 0.6;
 }
 
-/* PRIMARY BUTTONS */
+/* BUTTONS */
 .primary-btn {
     background: var(--primary);
     border: none;
     padding: 18px 35px;
     border-radius: 5px;
     font-weight: 600;
-    margin-top: 40px;
+    margin-top: auto; /* Keeps buttons aligned in cards */
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    text-align: center;
 }
 
 .primary-btn:hover {
@@ -196,7 +211,23 @@ audio {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -2; /* behind everything */
+    z-index: -2;
     width: 100%;
     height: 100%;
+}
+
+.res-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.res-item:hover {
+    background: var(--glass);
+    color: var(--primary);
 }
