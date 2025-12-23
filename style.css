@@ -17,7 +17,38 @@ body {
     background: var(--bg);
     color: white;
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* keep original behavior */
+    margin: 0;
+    overflow-x: hidden; /* allow vertical scroll if needed */
+    position: relative;
+    z-index: 0;
+}
+
+/* Make sure particle canvas stays in the background */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2; /* behind everything */
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    position: relative; /* relative instead of absolute */
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 10% 50px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    pointer-events: none;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1; /* above particle canvas */
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
 /* Fixed: .glow-orb class renamed to match your HTML (.glow-blob) */
