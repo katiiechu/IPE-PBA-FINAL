@@ -1,19 +1,15 @@
-/**
- * Global Navigation Function
- * Handles switching between sections and updating nav link styles
- */
+
 function navigateTo(pageId) {
-    // 1. Hide all pages
+   
     const pages = document.querySelectorAll('.page');
     pages.forEach(p => p.classList.remove('active'));
 
-    // 2. Show the targeted page
+
     const target = document.getElementById(pageId);
     if (target) {
         target.classList.add('active');
     }
 
-    // 3. Update Nav Button states
     const navButtons = document.querySelectorAll('.nav-item');
     navButtons.forEach(btn => btn.classList.remove('active'));
     
@@ -22,21 +18,19 @@ function navigateTo(pageId) {
         activeBtn.classList.add('active');
     }
 
-    // 4. Reset scroll position to top
+ 
     window.scrollTo(0, 0);
 }
 
-// Ensure the function is available to the HTML buttons
+
 window.navigateTo = navigateTo;
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    // Initialize with the Home page visible
+   
     navigateTo('home');
 
-    // =========================
-    // PARTICLE CANVAS LOGIC
-    // =========================
+  
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
