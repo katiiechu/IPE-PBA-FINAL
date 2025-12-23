@@ -29,27 +29,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-.glow-blob {
-    position: fixed;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    opacity: 0.1;
-    pointer-events: none;
-    filter: blur(100px);
-    animation: floatBlob 25s ease-in-out infinite;
-}
-
-.blob-1 { background: #52ff9b; top: 10%; left: 20%; animation-delay: 0s; }
-.blob-2 { background: #52ff9b; bottom: 15%; right: 25%; animation-delay: 5s; }
-.blob-3 { background: #52ff9b; top: 40%; right: 10%; animation-delay: 10s; }
-
-@keyframes floatBlob {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(50px, -30px); }
-    100% { transform: translate(0,0); }
-}
-
 nav {
     display: flex;
     justify-content: space-between;
