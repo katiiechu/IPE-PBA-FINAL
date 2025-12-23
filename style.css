@@ -231,6 +231,29 @@ audio {
     opacity: 0.6;
 }
 
+/* Center all content inside each episode card */
+.episode-card {
+    text-align: center;
+}
+
+/* Transcript buttons under audio */
+.episode-card a.primary-btn {
+    display: inline-block;      /* Makes it behave like a button/link */
+    margin-top: 10px;           /* Space between audio and button */
+    padding: 8px 16px;          /* Adjust size of button */
+    text-decoration: none;      /* Remove underline from link */
+    border-radius: 6px;         /* Rounded corners */
+    background-color: #2a9d8f;  /* Primary color */
+    color: #fff;                /* Button text color */
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+.episode-card a.primary-btn:hover {
+    background-color: #21867a;  /* Slightly darker on hover */
+}
+
 /* ==========================
    RESOURCES
 =========================== */
