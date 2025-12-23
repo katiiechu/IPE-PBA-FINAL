@@ -248,7 +248,7 @@ audio {
 
 .hero-sub {
     margin-bottom: 2rem; /* space below subtitle */
-
+}
 @media (max-width: 1024px) {
     .trilogy-grid { grid-template-columns: repeat(2, 1fr); }
     nav { padding: 30px 40px; }
